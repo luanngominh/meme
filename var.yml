@@ -1,0 +1,7 @@
+---
+ZSH_INSTALL: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+DESKTOP_USER: meocon
+GO_LINK: https://dl.google.com/go/go1.11.4.linux-amd64.tar.gz
+VISUAL_CODE_LINK: https://az764295.vo.msecnd.net/stable/c6e592b2b5770e40a98cb9c2715a8ef89aec3d74/code_1.30.0-1544567151_amd64.deb
+SLACK_LINK: https://downloads.slack-edge.com/linux_releases/slack-desktop-3.3.3-amd64.deb
+GOOGLE_CHROME_LINK: https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb

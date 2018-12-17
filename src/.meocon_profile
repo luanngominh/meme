@@ -1,0 +1,9 @@
+export GOPATH=${HOME}/go
+export GOBIN=/usr/local/go/bin
+export PATH=$PATH:$GOBIN
+
+alias c="clear"
+alias ifc="sudo ifconfig"
+alias e="exit"
+alias ll="ls -la"
+

@@ -1,0 +1,28 @@
+#!/bin/bash
+
+function install_pip() {
+    curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+    python get-pip.py
+    rm -f get-pip.py
+}
+
+#Check run with sudo mode
+if [[ `whoami` != "root" ]]; then
+    echo "Run with sudo mode"
+    exit 1
+fi
+
+#Check pip
+which pip > /dev/null 2>&1
+if [[ $? != 0 ]]; then 
+    install_pip
+fi
+
+install_message=`pip install ansible`
+if [[ $? = 0 ]]; then
+    echo "Installing Ansible successfully!"
+    exit 0
+fi
+
+echo "Install error with message"
+echo $install_message
