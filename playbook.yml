@@ -4,6 +4,13 @@
   vars_files:
   - var.yml
   tasks:
+  - name: Add desktop user
+    user:
+      name: "{{ DESKTOP_USER }}"
+      create_home: yes
+      password: " {{ DESKTOP_USER_PASSWORD }} "
+      state: present
+
   - name: Copy source list
     copy:
       src: src/sources.list
@@ -18,84 +25,102 @@
       url: https://download.docker.com/linux/debian/gpg
       state: present
 
-  - name: Add kali key
+  - name: Add Kali key
     apt_key:
       id: ED444FF07D8D0BF6
-      keyserver: keys.gnupg.net
+      url: https://archive.kali.org/archive-key.asc
+      state: present
+   
+  - name: Install some tools
+    apt:
+      name: "{{ item }}"
+      state: present
+    with_items:
+    - zsh
+    - git
+    - vim
+    - curl
+    - gnupg2
+    - tcpdump
+    - dnsutils
+    - net-tools
+    - wireshark
+    - ca-certificates
+    - apt-transport-https
+    - software-properties-common
+
+  - name: Download oh-my-zsh.sh
+    get_url:
+      url: "{{ OH_MY_ZSH_LINK }}"
+      dest: /tmp/oh-my-zsh.sh
+      mode: 0777
+  
+  - name: Install oh-my-zsh
+    shell: /tmp/oh-my-zsh.sh
+
+  - name: Copy own alias
+    copy:
+      src: src/.meocon_profile
+      dest: /.meocon_profile
+
+  - name: Copy zsh config to root
+    copy:
+      src: src/.zshrc
+      dest: /root/.zshrc
+
+  - name: Copy zsh config to desktop user
+    copy: 
+      src: src/.zshrc
+      dest: /home/{{ DESKTOP_USER }}/.zshrc
+    
+  - name: Install golang
+    unarchive:
+      src: "{{ GO_LINK }}"
+      dest: /usr/local
+      remote_src: yes
+
+  - name: Download get_pip
+    get_url:
+      url: https://bootstrap.pypa.io/get-pip.py
+      dest: /tmp/get-pip.py
+      mode: 0777
+
+  - name: Install pip
+    command: python /tmp/get-pip.py
+
+  - name: Install ansible
+    pip:
+      name: ansible
+      state: present
+    
+  - name: Install visual code, slack, chrome
+    apt:
+      deb: "{{ item }}"
+    with_items:
+      - "{{ VISUAL_CODE_LINK }}"
+      - "{{ SLACK_LINK }}"
+      - "{{ GOOGLE_CHROME_LINK }}"
+
+  - name: Add docker source
+    apt_repository:
+      repo: "{{ DOCKER_SOURCE }}"
       state: present
 
-  # - name: Install some tools
-  #   apt:
-  #     name: {{ item }}
-  #     state: present
-  #     with_items:
-  #       - git
-  #       - zsh
-  #       - vim
-  #       - curl
-  #       - gnupg2
-  #       - tcpdump
-  #       - dnsutils
-  #       - net-tools
-  #       - wireshark
-  #       - ca-certificates
-  #       - apt-transport-https
-  #       - software-properties-common
-
-  # - name: Install oh-my-zsh
-  #   command: {{ ZSH_INSTALL }}
+  - name: Install docker
+    apt: 
+      name: docker-ce
+      state: present
+      update_cache: yes
   
-  # - name: Copy own alias
-  #   copy:
-  #     src: src/.meocon_profile
-  #     dest: /.meocon_profile
+  - name: Install docker-compose
+    get_url:
+      url: "{{ DOCKER_COMPOSE_URL }}"
+      dest: /usr/local/bin/docker-compose
+      owner: root
+      mode: 755
 
-  # - name: Copy zsh config to root
-  #   copy:
-  #     src: src/.zshrc
-  #     dest: /root/.zshrc
-
-  # - name: Copy zsh config to desktop user
-  #   copy: 
-  #     src: src/.zshrc
-  #     dest: /home/{{ DESKTOP_USER }}/.zshrc
-    
-  # - name: Install golang
-  #   unarchive:
-  #     src: {{ GO_LINK }}
-  #     dest: /usr/local
-  #     remote_src: yes
-
-  # - name: Download get_pip
-  #   get_url:
-  #     url: curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-  #     dest: /tmp
-  #     mode: 0777
-
-  # - name: Install pip
-  #   command: python get-pip.py
-
-  # - name: Install ansible
-  #   pip:
-  #     name: ansible
-  #     state: present
-    
-  # - name: Install visual code, slack, chrome
-  #   apt:
-  #     deb: {{ item }}
-  #   with_items:
-  #     - {{ VISUAL_CODE_LINK }}
-  #     - {{ SLACK_LINK }}
-  #     - {{ GOOGLE_CHROME_LINK }}
-
-  # - name: Install docker
-  #   apt: 
-  #     name: docker-ce
-  #     state: present
-  
-  # - name: Install docker-compose
-  #   get_url:
-  #     url: https://github.com/docker/compose/releases/download/1.23.1/docker-compose-Linux-x86_64
-  #     dest: /usr/local/bin/docker-compose
-  #     owner: root
-  #     mode: 755
+  - name: Install telegram
+    unarchive:
+      src: "{{ TELEGRAM_LINK }}"
+      dest: /opt
+      remote_src: yes

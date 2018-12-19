@@ -3,13 +3,14 @@
 # deb cdrom:[Debian GNU/Linux 9.5.0 _Stretch_ - Official amd64 NETINST 20180714-10:25]/ stretch main
 
 #deb cdrom:[Debian GNU/Linux 9.5.0 _Stretch_ - Official amd64 NETINST 20180714-10:25]/ stretch main
+
 deb [trusted=yes] http://http.kali.org/kali kali-rolling main non-free contrib
 deb http://deb.debian.org/debian stretch main
-deb [arch=amd64] https://download.docker.com/linux/debian stretch stable
+
 #deb-src http://ftp.us.debian.org/debian/ stretch main
 
-deb http://security.debian.org/debian-security stretch/updates main
-deb-src http://security.debian.org/debian-security stretch/updates main
+#deb http://security.debian.org/debian-security stretch/updates main
+#deb-src http://security.debian.org/debian-security stretch/updates main
 
 # stretch-updates, previously known as 'volatile'
 #deb http://ftp.us.debian.org/debian/ stretch-updates main
