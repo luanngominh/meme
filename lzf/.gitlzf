@@ -1,0 +1,28 @@
+#!/bin/zsh
+
+#Support git command
+
+function ladd() {
+	git add .
+}
+
+function lcm() {
+	git commit	
+}
+
+function lst() {
+	git status
+}
+
+function lph() {
+	if [[ $# != 2 ]]; then
+		git push
+		return $?
+	fi
+
+	git push $1 $2
+}
+
+function gd() {
+	git diff
+}

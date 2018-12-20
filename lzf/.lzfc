@@ -1,0 +1,5 @@
+alias c="clear"
+alias ifc="sudo ifconfig"
+alias e="exit"
+alias ll="ls -la"
+

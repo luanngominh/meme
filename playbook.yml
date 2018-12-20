@@ -11,6 +11,9 @@
       password: " {{ DESKTOP_USER_PASSWORD }} "
       state: present
 
+  - name: Add desktop user to visudo
+  
+
   - name: Copy source list
     copy:
       src: src/sources.list
@@ -62,6 +65,16 @@
     copy:
       src: src/.meocon_profile
       dest: /.meocon_profile
+
+  - name: Copy .gitlzf
+    copy:
+      src: lzf/.gitlzf
+      dest: /.gitlzf
+
+  - name: Copy .lzfc
+    copy:
+      src: lzf/.lzfc
+      dest: /.lzfc
 
   - name: Copy zsh config to root
     copy:
