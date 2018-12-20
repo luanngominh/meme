@@ -20,7 +20,11 @@ After that, create /etc/ansible/host with content
 127.0.0.1
 ```
 with meow is random name.
-Finally, install play book
+Install python-apt to use apt ansible moudle
+```shell
+apt-get install python-apt
+```
+Finally, run play book
 ```shell
 ansible-playbook playbook.yml --limit meow
 ```
