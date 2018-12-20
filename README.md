@@ -1,5 +1,5 @@
 # meme
-Ansible playbook for installing app and tool to my computer
+Ansible playbook for installing app and tool to my computer - only debian or ubuntu support
 
 Install:
 * ZSH and oh-my-zsh
