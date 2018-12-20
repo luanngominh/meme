@@ -10,9 +10,8 @@
       create_home: yes
       password: " {{ DESKTOP_USER_PASSWORD }} "
       state: present
-
-  - name: Add desktop user to visudo
-  
+      groups: sudo
+      comment: "User created by ansible"
 
   - name: Copy source list
     copy:
