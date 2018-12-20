@@ -10,6 +10,7 @@ Install:
 * Visual code
 * Slack
 * Docker and docker-compose
+* Add some alias git command and terminal command
 
 # Usage
 First, install ssh on your computer.
