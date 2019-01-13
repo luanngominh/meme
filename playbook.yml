@@ -87,20 +87,6 @@
       src: "{{ GO_LINK }}"
       dest: /usr/local
       remote_src: yes
-
-  - name: Download get_pip
-    get_url:
-      url: https://bootstrap.pypa.io/get-pip.py
-      dest: /tmp/get-pip.py
-      mode: 0777
-
-  - name: Install pip
-    command: python /tmp/get-pip.py
-
-  - name: Install ansible
-    pip:
-      name: ansible
-      state: present
     
   - name: Install visual code, slack, chrome
     apt:
