@@ -28,7 +28,7 @@
     apt:
       upgrade: yes
       update_cache: yes
-      cache_valid_tome: 86400 #one day      
+      cache_valid_time: 86400 #one day      
 
   - name: Install some tools
     apt:
