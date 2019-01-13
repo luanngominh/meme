@@ -4,15 +4,6 @@
   vars_files:
   - var.yml
   tasks:
-  - name: Add desktop user
-    user:
-      name: "{{ DESKTOP_USER }}"
-      create_home: yes
-      password: " {{ DESKTOP_USER_PASSWORD }} "
-      state: present
-      groups: sudo
-      comment: "User created by ansible"
-
   - name: Copy source list
     copy:
       src: src/sources.list
@@ -20,7 +11,7 @@
       owner: root
       group: root
       mode: 0644
-    
+
   - name: Add docker pgp key
     apt_key:
       id: 0EBFCD88
@@ -33,6 +24,12 @@
       url: https://archive.kali.org/archive-key.asc
       state: present
    
+  - name: Update apt cache and upgrade system
+    apt:
+      upgrade: yes
+      update_cache: yes
+      cache_valid_tome: 86400 #one day      
+
   - name: Install some tools
     apt:
       name: "{{ item }}"

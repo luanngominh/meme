@@ -12,7 +12,13 @@ if [[ `whoami` != "root" ]]; then
     exit 1
 fi
 
-#Check pip
+#Check and install curl
+which curl > /dev/null 2>&1
+if [[ $? != 0 ]]; then
+    apt-get install curl -y
+fi
+
+#Check and install pip
 which pip > /dev/null 2>&1
 if [[ $? != 0 ]]; then 
     install_pip

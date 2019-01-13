@@ -27,5 +27,5 @@ apt-get install python-apt
 ```
 Finally, run play book
 ```shell
-ansible-playbook playbook.yml --limit meow
+ansible-playbook playbook.yml --limit meow -i inventory
 ```
