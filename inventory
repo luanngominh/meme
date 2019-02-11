@@ -1,5 +1,5 @@
-[pc]
+[workspace]
 200.200.200.3 ansible_ssh_private_key_file=/home/meocon/Desktop/meme/rsa_key remote_user=root
 
 [all:children]
-pc
+workspace
