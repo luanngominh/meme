@@ -1,0 +1,121 @@
+---
+- hosts: all
+  sudo: yes
+  vars_files:
+  - var.yml
+  tasks:
+  - name: Copy source list
+    copy:
+      src: src/sources.list
+      dest: /etc/apt/sources.list
+      owner: root
+      group: root
+      mode: 0644
+
+  - name: Add docker pgp key
+    apt_key:
+      id: 0EBFCD88
+      url: https://download.docker.com/linux/debian/gpg
+      state: present
+
+  - name: Add Kali key
+    apt_key:
+      id: ED444FF07D8D0BF6
+      url: https://archive.kali.org/archive-key.asc
+      state: present
+   
+  - name: Update apt cache and upgrade system
+    apt:
+      upgrade: yes
+      update_cache: yes
+      cache_valid_time: 86400 #one day      
+
+  - name: Install some tools
+    apt:
+      name: "{{ item }}"
+      state: present
+    with_items:
+    - zsh
+    - git
+    - vim
+    - curl
+    - gnupg2
+    - tcpdump
+    - dnsutils
+    - net-tools
+    - wireshark
+    - ca-certificates
+    - apt-transport-https
+    - software-properties-common
+
+  - name: Download oh-my-zsh.sh
+    get_url:
+      url: "{{ OH_MY_ZSH_LINK }}"
+      dest: /tmp/oh-my-zsh.sh
+      mode: 0777
+  
+  - name: Install oh-my-zsh
+    shell: /tmp/oh-my-zsh.sh
+
+  - name: Copy own alias
+    copy:
+      src: src/.meocon_profile
+      dest: /.meocon_profile
+
+  - name: Copy .gitlzf
+    copy:
+      src: lzf/.gitlzf
+      dest: /.gitlzf
+
+  - name: Copy .lzfc
+    copy:
+      src: lzf/.lzfc
+      dest: /.lzfc
+
+  - name: Copy zsh config to root
+    copy:
+      src: src/.zshrc
+      dest: /root/.zshrc
+
+  - name: Copy zsh config to desktop user
+    copy: 
+      src: src/.zshrc
+      dest: /home/{{ DESKTOP_USER }}/.zshrc
+    
+  - name: Install golang
+    unarchive:
+      src: "{{ GO_LINK }}"
+      dest: /usr/local
+      remote_src: yes
+    
+  - name: Install visual code, slack, chrome
+    apt:
+      deb: "{{ item }}"
+    with_items:
+      - "{{ VISUAL_CODE_LINK }}"
+      - "{{ SLACK_LINK }}"
+      - "{{ GOOGLE_CHROME_LINK }}"
+
+  - name: Add docker source
+    apt_repository:
+      repo: "{{ DOCKER_SOURCE }}"
+      state: present
+
+  - name: Install docker
+    apt: 
+      name: docker-ce
+      state: present
+      update_cache: yes
+  
+  - name: Install docker-compose
+    get_url:
+      url: "{{ DOCKER_COMPOSE_URL }}"
+      dest: /usr/local/bin/docker-compose
+      owner: root
+      mode: 755
+
+  - name: Install telegram
+    unarchive:
+      src: "{{ TELEGRAM_LINK }}"
+      dest: /opt
+      remote_src: yes

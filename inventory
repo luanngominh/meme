@@ -1,5 +1,5 @@
-[local]
-127.0.0.1
+[pc]
+200.200.200.3 ansible_ssh_private_key_file=/home/meocon/Desktop/meme/rsa_key remote_user=root
 
-[local:vars]
-ansible_user=root
+[all:children]
+pc
