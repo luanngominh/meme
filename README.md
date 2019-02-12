@@ -20,6 +20,7 @@ Ansible playbook for installing appliance for server and pc.
 My workspace will based on bacsic ultilities
 - [ ] alias some command
 - [ ] golang
+- [ ] go dep
 - [ ] docker and docker-compose
 - [ ] nodejs
 - [ ] vuejs and vue-cli
