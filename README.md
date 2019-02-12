@@ -16,6 +16,7 @@ Ansible playbook for installing appliance for server and pc.
 - [x] net-tools
 - [x] fonts-powerline
 
+* Note: oh-my-zsh only apply for root, so when we create new user we should copy .zshrc to current user directory. For example, `cp /etc/zprofile ~/.zshrc`.
 ## My workspace
 My workspace will based on bacsic ultilities
 - [ ] alias some command
