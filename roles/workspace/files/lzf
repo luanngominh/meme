@@ -1,4 +1,9 @@
-#!/bin/zsh
+#!/bin/bash
+
+alias c="clear"
+alias ifc="sudo ifconfig"
+alias e="exit"
+alias ll="ls -la"
 
 #Support git command
 

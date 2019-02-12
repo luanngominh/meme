@@ -4,19 +4,21 @@ This key in this project just is a example, we shouldn't use this key.
 Ansible playbook for installing appliance for server and pc.
 
 ## Basic utilities
-- [ ] upgrade system 
-- [ ] vim
-- [ ] git
-- [ ] zsh
-- [ ] oh-my-zsh
-- [ ] alias some command
-- [ ] curl
-- [ ] tcpdump
-- [ ] dnsutils
-- [ ] net-tools
+- [x] add sources list
+- [x] upgrade system 
+- [x] vim
+- [x] git
+- [x] zsh
+- [x] oh-my-zsh
+- [x] curl
+- [x] tcpdump
+- [x] dnsutils
+- [x] net-tools
+- [x] fonts-powerline
 
 ## My workspace
 My workspace will based on bacsic ultilities
+- [ ] alias some command
 - [ ] golang
 - [ ] docker and docker-compose
 - [ ] nodejs
@@ -27,4 +29,5 @@ My workspace will based on bacsic ultilities
 - [ ] visual code
 - [ ] dash-to-dock (gnome extension)
 
-## Some more
+## High available Radis clusters
+## Some more ... 

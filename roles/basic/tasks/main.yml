@@ -1,0 +1,54 @@
+- name: Copy source listr
+  copy: 
+    src: ../files/sources.list 
+    dest: /etc/apt/sources.list
+    mode: 0644
+    owner: root
+    group: root
+
+- name: Upgrade system
+  apt:
+    cache_valid_time: 86400
+    update_cache: yes
+    upgrade: full
+
+- name: Install utilities tools
+  apt:
+    cache_valid_time: 86400
+    state: present
+    name: "{{ item }}"
+  with_items:
+    - vim
+    - git
+    - zsh
+    - curl
+    - tcpdump
+    - dnsutils
+    - net-tools
+    - fonts-powerline
+
+- name: Set zsh is default login shell
+  replace:
+    dest: /etc/passwd
+    regexp: /bin/bash$
+    replace: /usr/bin/zsh
+  
+- name: Clone oh-my-zsh
+  git:
+    clone: yes
+    repo: "{{ zsh_link }}"
+    dest: /etc/oh-my-zsh
+
+- name: Modify oh-my-zsh permissions
+  file:
+    dest: /etc/oh-my-zsh
+    mode: 0777
+    state: directory
+
+- name: Copy zsh profile
+  copy:
+    src: ../files/zprofile
+    dest: /etc/zsh/zprofile
+    mode: 0777
+    owner: root
+    group: root
