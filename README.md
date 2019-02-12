@@ -1,5 +1,5 @@
 # MeMe project
-This key in this project just is a example, we shouldn't use this key.
+This key in this project (rsa_key, rsa_key.pub) just is a example, we shouldn't use this key.
 
 Ansible playbook for installing appliance for server and pc.
 
