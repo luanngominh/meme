@@ -1,0 +1,13 @@
+---
+- name: Alias some command
+  copy:
+    src: ../files/lzf
+    dest: /etc/lzf
+    state: file
+
+- name: Install golang
+
+
+- name: Add go path
+
+- name: Install go dep
