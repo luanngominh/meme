@@ -1,6 +1,5 @@
 [workspace]
-# 200.200.200.3 
-192.168.1.14
+local ansible_host=200.200.200.3
 
 [all:children]
 workspace
