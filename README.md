@@ -31,5 +31,7 @@ My workspace will based on bacsic ultilities
 - [ ] visual code
 - [ ] dash-to-dock (gnome extension)
 
+##Monitoring with kibana
+
 ## High available Radis clusters
 ## Some more ... 
