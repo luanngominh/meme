@@ -31,7 +31,11 @@ My workspace will based on bacsic ultilities
 - [ ] visual code
 - [ ] dash-to-dock (gnome extension)
 
-##Monitoring with kibana
+### Commming soon
+ * Support choice to install
+ * Frontend: sass, react, angular
+ 
+## Monitoring with kibana
 
 ## High available Radis clusters
 ## Some more ... 

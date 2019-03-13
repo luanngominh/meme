@@ -1,13 +1,15 @@
 ---
-- name: Alias some command
-  copy:
-    src: ../files/lzf
-    dest: /etc/lzf
-    state: file
-
-- name: Install golang
-
-
-- name: Add go path
-
-- name: Install go dep
+- include: alias.yml
+- include: chrome.yml
+- include: compose.yml
+- include: dash-to-dock.yml
+- include: docker.yml
+- include: go-dep.yml
+- include: golang.yml
+- include: mode.yml
+- include: slack.yml
+- include: telegram.yml
+- include: vscode.yml
+- include: vue-cli.yml
+- include: vue.yml
+- include: terraform.yml
