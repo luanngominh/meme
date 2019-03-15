@@ -22,8 +22,8 @@ My workspace will based on bacsic ultilities
 - [x] alias some command
 - [x] golang
 - [x] docker and docker-compose
-- [ ] nodejs
-- [ ] vuejs and vue-cli
+- [x] nodejs
+- [x] vuejs and vue-cli
 - [x] telegram
 - [ ] slack
 - [x] google chrome

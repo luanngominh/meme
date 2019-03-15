@@ -1,0 +1,12 @@
+---
+- name: Install vue
+  npm:
+    global: yes
+    name: vue
+    state: present
+
+- name: Install vue cli
+  npm:
+    global: yes
+    name: "@vue/cli"
+    state: present

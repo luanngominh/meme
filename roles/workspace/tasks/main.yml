@@ -9,6 +9,5 @@
 - include: slack.yml
 - include: telegram.yml
 - include: vscode.yml
-- include: vue-cli.yml
 - include: vue.yml
 - include: terraform.yml
