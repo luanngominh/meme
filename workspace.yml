@@ -1,6 +1,8 @@
 ---
 - hosts: all
+  vars_files:
+    - vars/docker.yml
   become: true
   roles:
   - basic
-#  - workspace
+  - workspace

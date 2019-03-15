@@ -1,0 +1,5 @@
+---
+- name: Copy alias some command
+  copy: 
+    src: ../files/.meocon_profile
+    dest: /etc/.meocon_profile

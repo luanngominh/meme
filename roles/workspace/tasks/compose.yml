@@ -1,0 +1,7 @@
+---
+- name: Download docker-compose
+  get_url:
+    url: "{{ DOCKER_COMPOSE_URL }}-{{ os }}-{{ architech }}"
+    dest: /usr/local/bin/docker-compose
+    mode: 0444
+    owner: root

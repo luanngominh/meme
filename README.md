@@ -19,10 +19,10 @@ Ansible playbook for installing appliance for server and pc.
 * Note: oh-my-zsh only apply for root, so when we create new user we should copy .zshrc to current user directory. For example, `cp /etc/zprofile ~/.zshrc`.
 ## My workspace
 My workspace will based on bacsic ultilities
-- [ ] alias some command
-- [ ] golang
+- [x] alias some command
+- [x] golang
 - [ ] go dep
-- [ ] docker and docker-compose
+- [x] docker and docker-compose
 - [ ] nodejs
 - [ ] vuejs and vue-cli
 - [ ] telegram

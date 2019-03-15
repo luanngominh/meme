@@ -4,6 +4,7 @@ GO_LINK: https://dl.google.com/go/go1.11.4.linux-amd64.tar.gz
 VISUAL_CODE_LINK: https://az764295.vo.msecnd.net/stable/c6e592b2b5770e40a98cb9c2715a8ef89aec3d74/code_1.30.0-1544567151_amd64.deb
 SLACK_LINK: https://downloads.slack-edge.com/linux_releases/slack-desktop-3.3.3-amd64.deb
 GOOGLE_CHROME_LINK: https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-DOCKER_SOURCE: deb [arch=amd64] https://download.docker.com/linux/debian stretch stable
-DOCKER_COMPOSE_URL: https://github.com/docker/compose/releases/download/1.23.1/docker-compose-Linux-x86_64
+DOCKER_COMPOSE_URL: https://github.com/docker/compose/releases/download/1.23.1/docker-compose-
 TELEGRAM_LINK: https://updates.tdesktop.com/tlinux/tsetup.1.5.2.tar.xz
+WORKSPACE_USER:
+  - "meocon"

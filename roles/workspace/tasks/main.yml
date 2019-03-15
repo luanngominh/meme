@@ -4,7 +4,7 @@
 - include: compose.yml
 - include: dash-to-dock.yml
 - include: docker.yml
-- include: go-dep.yml
+- include: go-util.yml
 - include: golang.yml
 - include: mode.yml
 - include: slack.yml

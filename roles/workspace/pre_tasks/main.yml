@@ -1,0 +1,8 @@
+---
+- name: Get os
+  command: uname -s
+  register: os
+
+- name: Architech
+  command: uname -s
+  register: architech
