@@ -18,18 +18,18 @@ Ansible playbook for installing appliance for server and pc.
 
 * Note: oh-my-zsh only apply for root, so when we create new user we should copy .zshrc to current user directory. For example, `cp /etc/zprofile ~/.zshrc`.
 ## My workspace
-My workspace will based on bacsic ultilities
+Work space for golang developer, devops, and frontend vue.
 - [x] alias some command
 - [x] golang
 - [x] docker and docker-compose
 - [x] nodejs
 - [x] vuejs and vue-cli
 - [x] telegram
-- [ ] slack
+- [x] slack
 - [x] google chrome
 - [x] visual code
 - [x] terraform
-- [ ] dash-to-dock (gnome extension)
+- [x] dash-to-dock (gnome extension)
  
 ## Monitoring with kibana
 
