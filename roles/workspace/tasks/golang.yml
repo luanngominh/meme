@@ -4,3 +4,4 @@
     src: "{{ GO_LINK }}"
     dest: /usr/local/go
     remote_src: True
+    mode: 0777

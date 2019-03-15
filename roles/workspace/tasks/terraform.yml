@@ -1,0 +1,7 @@
+---
+- name: Install terraform
+  unarchive:
+    src: "https://releases.hashicorp.com/terraform/0.11.13/terraform_0.11.13_{{ ansible_system }}_amd64.zip"
+    dest: "/usr/local/bin"
+    remote_src: true
+    mode: 0744

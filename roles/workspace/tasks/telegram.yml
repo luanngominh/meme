@@ -1,0 +1,6 @@
+---
+- name: Install telegram
+  unarchive:
+    src: "{{ https://updates.tdesktop.com/tlinux/tsetup.1.5.15.tar.xz }}"
+    dest: /opt/telegram
+    remote_src: True

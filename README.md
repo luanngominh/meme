@@ -1,4 +1,4 @@
-# MeMe project
+# `meme` project
 This key in this project (rsa_key, rsa_key.pub) just is a example, we shouldn't use this key.
 
 Ansible playbook for installing appliance for server and pc.
@@ -21,19 +21,15 @@ Ansible playbook for installing appliance for server and pc.
 My workspace will based on bacsic ultilities
 - [x] alias some command
 - [x] golang
-- [ ] go dep
 - [x] docker and docker-compose
 - [ ] nodejs
 - [ ] vuejs and vue-cli
-- [ ] telegram
+- [x] telegram
 - [ ] slack
 - [x] google chrome
 - [x] visual code
+- [x] terraform
 - [ ] dash-to-dock (gnome extension)
-
-### Commming soon
- * Support choice to install
- * Frontend: sass, react, angular
  
 ## Monitoring with kibana
 
