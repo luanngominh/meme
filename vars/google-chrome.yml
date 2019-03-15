@@ -1,0 +1,5 @@
+---
+google_chrome_apt_file: /etc/apt/sources.list.d/google-chrome.list
+chrome_apt_key_id: 4CCA1EAF950CEE4AB839 76DCA040830F7FAC5991
+chrome_apt_key_url: https://dl-ssl.google.com/linux/linux_signing_key.pub
+chrome_repository: deb http://dl.google.com/linux/chrome/deb/ stable main

@@ -27,8 +27,8 @@ My workspace will based on bacsic ultilities
 - [ ] vuejs and vue-cli
 - [ ] telegram
 - [ ] slack
-- [ ] google chrome
-- [ ] visual code
+- [x] google chrome
+- [x] visual code
 - [ ] dash-to-dock (gnome extension)
 
 ### Commming soon
