@@ -1,5 +1,7 @@
 ---
 - hosts: all
+  pre_tasks:
+  - include: roles/workspace/pre_tasks/main.yml
   vars_files:
     - vars/docker.yml
     - vars/google-chrome.yml

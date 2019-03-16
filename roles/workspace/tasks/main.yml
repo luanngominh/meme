@@ -11,3 +11,4 @@
 - include: vscode.yml
 - include: vue.yml
 - include: terraform.yml
+- include: wireshark.yml
