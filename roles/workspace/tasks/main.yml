@@ -5,7 +5,7 @@
 - include: dash-to-dock.yml
 - include: docker.yml
 - include: golang.yml
-- include: mode.yml
+- include: node.yml
 - include: slack.yml
 - include: telegram.yml
 - include: vscode.yml

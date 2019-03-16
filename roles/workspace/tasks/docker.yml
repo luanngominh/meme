@@ -12,13 +12,15 @@
 
 - name: Add Docker's public PGP key to APT keyring
   apt_key:
-    id: "{{ docker_apt_key_id }}"
-    url: "{{ docker_apt_key_url }}"
+    url: "https://download.docker.com/linux/debian/gpg"
 
 - name: Configure Docker's upstream apt repository
   apt_repository:
-    repo: "{{ docker_apt_repository }}"
-    update_cache: true
+    repo: "{{ docker_apt_repository|lower }}"
+
+- name: debug
+  debug:
+    msg: "docker-{{ docker_edition }}"
 
 - name: Install docker
   apt:
@@ -30,4 +32,5 @@
     name: "{{ item }}"
     group: "docker"
     append: true
-  
+  with_items: "{{ docker_users }}"
+  ignore_errors: true

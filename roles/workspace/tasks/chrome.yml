@@ -13,7 +13,7 @@
 - name: Add google chrome repository
   apt_repository:
     repo: "{{ chrome_repository }}"
-    filename: "{{ google_chrome_apt_file }}"
+    filename: "{{ '.'.join(google_chrome_apt_file.split('.')[0:-1]) }}"
   when: google_apt_exists.rc == 1 
 
 - name: Install google chrome

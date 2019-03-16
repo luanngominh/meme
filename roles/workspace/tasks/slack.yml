@@ -3,4 +3,3 @@
   apt:
     deb: "{{ SLACK_LINK }}"
     state: present
-    upgrade: "yes"

@@ -1,16 +1,4 @@
 ---
-- name: View os
-  debug:
-    msg: "System {{ os }}"
-
-- name: Architech
-  debug:
-    msg: "Arch: {{ architech }}"
-
-- name: Show docker link
-  debug:
-    msg: "{{ DOCKER_COMPOSE_URL }}-{{ os.stdout }}-{{ architech.stdout }}"
-
 - name: Download docker-compose
   get_url:
     url: "{{ DOCKER_COMPOSE_URL }}-{{ os.stdout }}-{{ architech.stdout }}"

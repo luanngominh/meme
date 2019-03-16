@@ -26,6 +26,7 @@
     - dnsutils
     - net-tools
     - fonts-powerline
+    - sudo
 
 - name: Set zsh is default login shell
   replace:
