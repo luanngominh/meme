@@ -1,4 +1,12 @@
 ---
+- name: Add Visual's public PGP key to APT keyring
+  apt_key:
+    url: "{{ vscode_key_url }}"
+
+- name: Config visual code upstream
+  apt_repository:
+    repo: "{{ vscode_repo }}"
+
 - name: Install visual studio code
   apt:
     name: code
