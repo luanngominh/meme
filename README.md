@@ -28,7 +28,8 @@ Work space for golang developer, devops, and frontend vue.
 - [x] google chrome
 - [x] visual code
 - [x] terraform
-- [ ] dash-to-dock (gnome extension)
+- [x] tweak
+- [x] dash-to-dock (gnome extension)
  
 ## High Avaiable Monitoring With CheckMK
 
