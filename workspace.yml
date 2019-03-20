@@ -1,10 +1,11 @@
 ---
-- hosts: all
+- hosts: workspace
   pre_tasks:
   - include: roles/workspace/pre_tasks/main.yml
   vars_files:
     - vars/docker.yml
     - vars/google-chrome.yml
+    - vars/vscode.yml
   become: true
   roles:
   - basic

@@ -1,7 +1,12 @@
 ---
+- name: Check golang folder has not existed
+  shell: test /usr/local/go
+  register: go
+
 - name: Install golang
   unarchive:
     src: "{{ GO_LINK }}"
     dest: /usr/local
     remote_src: True
     mode: 0777
+  when: go.rc == 1

@@ -1,7 +1,25 @@
 ---
+- name: Checking terraform has not existed
+  stat: 
+    path: "/usr/local/bin/tf"
+  register: tf 
+
 - name: Install terraform
   unarchive:
-    src: "https://releases.hashicorp.com/terraform/0.11.13/terraform_0.11.13_{{ ansible_system }}_amd64.zip"
+    src: "{{ TERRAFORM_LINK }}"
     dest: "/usr/local/bin"
     remote_src: true
-    mode: 0744
+  when: tf.stat.exists == False
+
+- name: Rename terraform to tf
+  file: 
+    src: "/usr/local/bin/terraform"
+    dest: "/usr/local/bin/tf"
+    state: hard
+    mode: 0755
+  when: tf.stat.exists == False
+
+- name: Remove old terraform
+  file:
+    path: "/usr/local/bin/terraform"
+    state: absent

@@ -1,6 +1,11 @@
 ---
+- name: Check telegram has not existed
+  command: test /opt/Telegram
+  register: tele
+
 - name: Install telegram
   unarchive:
     src: "{{ TELEGRAM_LINK }}"
     dest: /opt
     remote_src: True
+  when: tele.rc == 1

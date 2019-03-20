@@ -53,6 +53,3 @@
     mode: 0777
     owner: root
     group: root
-
-    #- name: Install oh-my-zsh
-    #  command: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"

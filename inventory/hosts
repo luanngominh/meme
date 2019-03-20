@@ -1,5 +1,13 @@
 [workspace]
 local ansible_host=200.200.200.19
 
+[checkmk]
+
+
+[influxdb]
+
+
 [all:children]
 workspace
+checkmk
+influxdb

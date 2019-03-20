@@ -1,4 +1,18 @@
 ---
+- name: Get add node repository script
+  get_url: 
+    url: "{{ NODE_REPO }}"
+    dest: /tmp/node.sh
+    mode: 700
+
+- name: Add node repository
+  shell: /tmp/node.sh
+
+- name: Remove script
+  file:
+    path: /tmp/node.sh
+    state: absent
+
 - name: Install nodejs
   apt:
     name: nodejs

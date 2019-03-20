@@ -9,7 +9,6 @@ Ansible playbook for installing appliance for server and pc.
 - [x] vim
 - [x] git
 - [x] zsh
-- [ ] oh-my-zsh
 - [x] curl
 - [x] tcpdump
 - [x] dnsutils
@@ -25,13 +24,13 @@ Work space for golang developer, devops, and frontend vue.
 - [x] nodejs
 - [x] vuejs and vue-cli
 - [x] telegram
-- [ ] slack
+- [x] slack
 - [x] google chrome
 - [x] visual code
-- [ ] terraform
+- [x] terraform
 - [ ] dash-to-dock (gnome extension)
  
-## Monitoring with kibana
+## High Avaiable Monitoring With CheckMK
 
 ## High available Radis clusters
 ## Some more ... 

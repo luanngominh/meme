@@ -1,0 +1,9 @@
+- name: NFS client
+  apt:
+    name: nfs-common
+    state: present
+
+- name: Install autofs
+  apt: 
+    name: autofs
+    state: present
