@@ -1,0 +1,18 @@
+- name: Install tweak
+  apt:
+    name: tweak
+    state: present
+
+- name: Create dash-to-dock@micxgx.gmail.com folder
+  file:
+    path: "/home/{{ item }}/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com"
+    state: directory
+  with_items: "{{ WORKSPACE_USER }}"
+
+- name: Install dash-to-dock
+  unarchive:
+    src: "{{ DASH_TO_DOCK }}"
+    dest: "/home/{{ item }}/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com"
+    remote_src: true
+    mode: 0777
+  with_items: "{{ WORKSPACE_USER }}"

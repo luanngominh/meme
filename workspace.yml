@@ -1,12 +1,17 @@
 ---
 - hosts: workspace
   pre_tasks:
-  - include: roles/workspace/pre_tasks/main.yml
+    - include: roles/workspace/pre_tasks/main.yml
   vars_files:
-    - vars/docker.yml
-    - vars/google-chrome.yml
-    - vars/vscode.yml
+    - roles/workspace/vars/basic.yml
+    - roles/workspace/vars/docker.yml
+    - roles/workspace/vars/google-chrome.yml
+    - roles/workspace/vars/vscode.yml
   become: true
   roles:
-  - basic
-  - workspace
+    - basic
+    - workspace
+  post_tasks:
+    - name: Reminding reboot after install tool for workspace
+      debug: 
+        msg: Pleases reboot your system after continuing to use

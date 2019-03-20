@@ -6,6 +6,7 @@
 - name: Config visual code upstream
   apt_repository:
     repo: "{{ vscode_repo }}"
+    filename: vscode.list
 
 - name: Install visual studio code
   apt:

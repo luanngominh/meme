@@ -1,9 +1,7 @@
 # `meme` project
-This key in this project (rsa_key, rsa_key.pub) just is a example, we shouldn't use this key.
-
-Ansible playbook for installing appliance for server and pc.
 
 ## Basic utilities
+Install common tool to system
 - [x] add sources list
 - [x] upgrade system 
 - [x] vim
@@ -14,6 +12,8 @@ Ansible playbook for installing appliance for server and pc.
 - [x] dnsutils
 - [x] net-tools
 - [x] fonts-powerline
+- [x] sudo
+- [x] ssh
 
 * Note: oh-my-zsh only apply for root, so when we create new user we should copy .zshrc to current user directory. For example, `cp /etc/zprofile ~/.zshrc`.
 ## My workspace
@@ -33,4 +33,5 @@ Work space for golang developer, devops, and frontend vue.
 ## High Avaiable Monitoring With CheckMK
 
 ## High available Radis clusters
+
 ## Some more ... 

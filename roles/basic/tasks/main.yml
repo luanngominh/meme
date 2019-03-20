@@ -27,6 +27,7 @@
     - net-tools
     - fonts-powerline
     - sudo
+    - ssh
 
 - name: Set zsh is default login shell
   replace:
