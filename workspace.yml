@@ -9,7 +9,7 @@
     - roles/workspace/vars/vscode.yml
   become: true
   roles:
-    - basic
+    # - basic
     - workspace
   post_tasks:
     - name: Reminding reboot after install tool for workspace

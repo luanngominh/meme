@@ -3,3 +3,17 @@
   copy: 
     src: ../files/.meocon_profile
     dest: /etc/.meocon_profile
+
+- name: Copy lzf
+  copy:
+    src: ../files/lzf
+    dest: /etc/lzf
+
+
+- name: Source alias file
+  lineinfile:
+    path: /etc/profile
+    insertafter: EOF
+    line: |
+        source /etc/lzf
+        source /etc/.meocon_profile
