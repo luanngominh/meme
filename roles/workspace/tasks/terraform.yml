@@ -1,8 +1,8 @@
 ---
 - name: Checking terraform has not existed
-  stat: 
+  stat:
     path: "/usr/local/bin/tf"
-  register: tf 
+  register: tf
 
 - name: Install terraform
   unarchive:
@@ -12,7 +12,7 @@
   when: tf.stat.exists == False
 
 - name: Rename terraform to tf
-  file: 
+  file:
     src: "/usr/local/bin/terraform"
     dest: "/usr/local/bin/tf"
     state: hard

@@ -1,12 +1,12 @@
 ---
 - name: Copy alias some command
-  copy: 
-    src: ../files/.meocon_profile
+  copy:
+    src: files/.meocon_profile
     dest: /etc/.meocon_profile
 
 - name: Copy lzf
   copy:
-    src: ../files/lzf
+    src: files/lzf
     dest: /etc/lzf
 
 

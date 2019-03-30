@@ -11,4 +11,4 @@
 - name: Install visual studio code
   apt:
     name: code
-    state: latest
+    state: present
