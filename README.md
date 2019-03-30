@@ -17,7 +17,7 @@ In `inventory/group_vars/all.yml`, copy_source_list'value is False, which mean w
 - [x] sudo
 - [x] ssh
 
-* Note: oh-my-zsh only apply for root, so when we create new user we should copy .zshrc to current user directory. For example, `cp /etc/zsh/zprofile ~/.zshrc`
+* Note: oh-my-zsh only apply for root, so when we run ansible playbook or create new user we should copy .zshrc to current user directory. For example, `cp /etc/zsh/zprofile ~/.zshrc`
 ## My workspace
 Work space for golang developer, devops, and frontend vue.
 - [x] alias some command

@@ -1,0 +1,2 @@
+ansible_user: influx
+ansible_ssh_private_key_file: /home/meocon/Downloads/meme/id_rsa
