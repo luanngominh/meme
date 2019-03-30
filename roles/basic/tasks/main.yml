@@ -28,7 +28,8 @@
     - net-tools
     - fonts-powerline
     - sudo
-    - ssh
+    - nload
+    - sysstat
 
 - name: Set zsh is default login shell
   replace:
