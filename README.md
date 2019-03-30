@@ -1,7 +1,9 @@
 # `meme` project
 
 ## Basic utilities
-Install common tool to system
+
+Install common tool to debian or based on debian distro.
+In `inventory/group_vars/all.yml`, copy_source_list'value is False, which mean will use source list on your own. Change to True if you want to use project'source list.
 - [x] add sources list
 - [x] upgrade system 
 - [x] vim
@@ -15,7 +17,7 @@ Install common tool to system
 - [x] sudo
 - [x] ssh
 
-* Note: oh-my-zsh only apply for root, so when we create new user we should copy .zshrc to current user directory. For example, `cp /etc/zprofile ~/.zshrc`.
+* Note: oh-my-zsh only apply for root, so when we create new user we should copy .zshrc to current user directory. For example, `cp /etc/zsh/zprofile ~/.zshrc`
 ## My workspace
 Work space for golang developer, devops, and frontend vue.
 - [x] alias some command
@@ -36,3 +38,8 @@ Work space for golang developer, devops, and frontend vue.
 ## High available Radis clusters
 
 ## Some more ... 
+
+## Collaborator
+I am enable for all contribution, you can fork this project to your git and create pull request for me.
+<br>Thank you,
+<br>luanngominh

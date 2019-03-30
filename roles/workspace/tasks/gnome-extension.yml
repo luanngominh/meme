@@ -15,6 +15,6 @@
     src: "{{ DASH_TO_DOCK }}"
     dest: "/home/{{ item }}/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com"
     remote_src: true
-    mode: 064444444
+    mode: 0644
     owner: "{{ item }}"
   with_items: "{{ WORKSPACE_USER }}"
