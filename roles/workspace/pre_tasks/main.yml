@@ -3,6 +3,6 @@
   command: uname -s
   register: os
 
-- name: Architech
+- name: Architecture
   command: uname -m
   register: architech

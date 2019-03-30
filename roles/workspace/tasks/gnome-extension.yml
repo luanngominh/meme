@@ -7,8 +7,9 @@
   file:
     path: "/home/{{ item }}/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com"
     state: directory
-    mode: 0751
+    mode: '751'
     owner: "{{ item }}"
+    group: "{{ item }}"
   with_items: "{{ WORKSPACE_USER }}"
 
 - name: Install dash-to-dock
