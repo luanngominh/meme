@@ -1,5 +1,11 @@
 ---
+- name: Checking slack has existed
+  command: test /usr/bin/slack
+  ignore_errors: true
+  register: slack
+
 - name: Install slack
   apt:
     deb: "{{ SLACK_LINK }}"
     state: present
+  when: slack.rc == 1
