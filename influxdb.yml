@@ -1,5 +1,0 @@
----
-- host: checkmk
-  become: true
-  roles:
-    - basic

@@ -1,0 +1,15 @@
+---
+- host: influx
+  become: true
+  roles:
+    - basic
+    # - influxdb
+
+# Install checkMK cluster
+- host: checkmk
+  become: true
+  roles:
+    - basic
+    # more role such as DRDB, CoreSync and so on
+    # - checkmk
+
