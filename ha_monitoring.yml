@@ -1,8 +1,8 @@
 ---
-# - hosts: influx
-#   become: true
-#   roles:
-#     - basic
+- hosts: influx
+  become: true
+  roles:
+    - basic
     # - ntp
     # - influxdb
 
