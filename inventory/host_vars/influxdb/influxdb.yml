@@ -1,2 +1,2 @@
-ansible_user: influxdb01
-ansible_ssh_private_key_file: key
+ansible_user: root
+ansible_ssh_private_key_file: /home/meocon/Desktop/meme/key

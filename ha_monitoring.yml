@@ -1,17 +1,17 @@
 ---
-- host: influx
-  become: true
-  roles:
-    - basic
-    - ntp
+# - hosts: influx
+#   become: true
+#   roles:
+#     - basic
+    # - ntp
     # - influxdb
 
 # Install checkMK cluster
-- host: checkmk
+- hosts: checkmk
   become: true
   roles:
     - basic
-    - ntp
+    # - ntp
     # more role such as DRDB, CoreSync and so on
     # - checkmk
 

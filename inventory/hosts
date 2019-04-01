@@ -12,3 +12,7 @@ influx ansible_host=172.16.5.75
 workspace
 checkmk
 influxdb
+
+[monitoring:children]
+checkmk
+influxdb
