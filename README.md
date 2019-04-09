@@ -32,12 +32,6 @@ Work space for golang developer, devops, and frontend vue.
 - [x] terraform
 - [x] tweak
 - [x] dash-to-dock (gnome extension)
- 
-## High Avaiable Monitoring With CheckMK
-
-## High available Radis clusters
-
-## Some more ... 
 
 ## Collaborator
 I am enable for all contribution, you can fork this project to your git and create pull request for me.

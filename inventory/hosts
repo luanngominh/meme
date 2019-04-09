@@ -1,18 +1,5 @@
 [workspace]
 local ansible_host=200.200.200.21
 
-[checkmk]
-checkmk_host_1 ansible_host=172.16.5.71
-checkmk_host_2 ansible_host=172.16.5.72
-
-[influxdb]
-influx ansible_host=172.16.5.75
-
 [all:children]
 workspace
-checkmk
-influxdb
-
-[monitoring:children]
-checkmk
-influxdb
