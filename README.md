@@ -17,6 +17,9 @@ In `inventory/group_vars/all.yml`, copy_source_list'value is False, which mean w
 - [x] sudo
 - [x] ssh
 
+Install basic utilities
+`ansible-playbook basic.yml --limit local`
+
 * Note: oh-my-zsh only apply for root, so when we run ansible playbook or create new user we should copy .zshrc to current user directory. For example, `cp /etc/zsh/zprofile ~/.zshrc`
 ## My workspace
 Work space for golang developer, devops, and frontend vue.
@@ -33,6 +36,8 @@ Work space for golang developer, devops, and frontend vue.
 - [x] tweak
 - [x] dash-to-dock (gnome extension)
 
+Install workspace
+`ansible-playbook workspace.yml --limit local`
 ## Collaborator
 I am enable for all contribution, you can fork this project to your git and create pull request for me.
 <br>Thank you,
