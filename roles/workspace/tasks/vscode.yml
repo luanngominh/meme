@@ -4,7 +4,7 @@
     url: "{{ vscode_key_url }}"
 
 - name: Check vscode upstream has existed
-  command: test /etc/apt/sources.list.d/vscode.list
+  command: test -f /etc/apt/sources.list.d/vscode.list
   ignore_errors: true
   register: vscode
 
@@ -12,7 +12,7 @@
   apt_repository:
     repo: "{{ vscode_repo }}"
     filename: vscode.list
-  when: vscode.rc == 1
+  when: vscode.rc != 0
 
 - name: Install visual studio code
   apt:
