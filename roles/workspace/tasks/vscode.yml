@@ -11,7 +11,7 @@
 - name: Config visual code upstream
   apt_repository:
     repo: "{{ vscode_repo }}"
-    filename: vscode.list
+    filename: vscode
   when: vscode.rc != 0
 
 - name: Install visual studio code
