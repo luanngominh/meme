@@ -1,4 +1,5 @@
 ---
+- include: kubectl.yml
 - include: gnome-extension.yml
 - include: terraform.yml
 - include: alias.yml

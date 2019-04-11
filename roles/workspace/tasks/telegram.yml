@@ -2,6 +2,7 @@
 - name: Check telegram has not existed
   command: test -d /opt/Telegram
   register: tele
+  ignore_errors: yes
 
 - name: Install telegram
   unarchive:

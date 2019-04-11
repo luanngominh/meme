@@ -1,0 +1,21 @@
+- name: Add google cloud apt key
+  apt_key: 
+    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+
+- name: Check google cloud repository existed
+  command: test -f /etc/apt/sources.list.d/k8s.list
+  ignore_errors: true
+  register: k8s
+
+- name: Add repository
+  apt_repository:
+    repo: deb https://apt.kubernetes.io/ kubernetes-xenial main
+    filename: k8s
+  when: k8s.rc != 0
+
+- name: Install kubectl
+  apt: 
+    name: kubectl
+    update_cache: yes
+    cache_valid_time: 86400
+    state: present
