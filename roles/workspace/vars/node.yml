@@ -1,4 +1,1 @@
-NODE_KEY: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
-NODE_REPO:
-  - deb https://deb.nodesource.com/node_0.10 {{ ansible_distribution_release.lower() }} main
-  - deb-src https://deb.nodesource.com/node_0.10 {{ ansible_distribution_release.lower() }} main
+NODE_FILE: https://nodejs.org/dist/v10.15.3/node-v10.15.3-linux-x64.tar.xz

@@ -1,23 +1,58 @@
 ---
-- name: Checking node repository has existed
-  command: test -f /etc/apt/sources.list.d/nodesource.list
-  ignore_errors: true
+- name: Check node is existed
+  command: node -v
   register: node
+  ignore_errors: yes
 
-- name: Add apt key for nodesource
-  apt_key:
-    url: " {{ NODE_KEY }} "
-  when: node.rc != 0
+- name: Check npm is existed
+  command: npm -v
+  register: npm
+  ignore_errors: yes
 
-- name: Add repository for node source
-  apt_repository:
-    repo: "{{ item }}"
-    filename: nodesource
-  when: node.rc != 0
-  with_items: "{{ NODE_REPO }}"
+- name: Download node
+  unarchive:
+    src: "{{ NODE_FILE }}"
+    dest: /usr/local
+    remote_src: true
+  when: node.rc != 0 or npm.rc != 0
+  register: meow
 
-- name: Install nodejs
-  apt :
-    name: nodejs
-    update_cache: yes
+# Get folder name from archive' name and rename to node
+- name: Rename unarchive node folder
+  command: "mv /usr/local/{{ NODE_FILE.split('/')[-1].split('.tar.xz')[0] }} /usr/local/node"
+  ignore_errors: yes
+
+- name: Check user's shell
+  command: echo $SHELL
+  register: shell
+
+- name: Get PATH
+  command: echo $PATH
+  register: path
+
+- name: Add node to zshrc
+  lineinfile:
+    path: "/home/{{ ansible_user }}/.zshrc"
+    backup: yes
+    insertafter: EOF
+    line: PATH=$PATH:/usr/local/node/bin
     state: present
+  when: shell.stdout.find('zsh') != -1 and path.stdout.find('/usr/local/node/bin') != 0
+
+- name: Add node to bashrc
+  lineinfile:
+    path: "/home/{{ ansible_user }}/.bashrc"
+    backup: yes
+    insertafter: EOF
+    line: PATH=$PATH:/usr/local/node/bin
+    state: present
+  when: shell.stdout.find('zsh') != -1 and path.stdout.find('/usr/local/node/bin') != 0
+
+- name: Add node to profile
+  lineinfile:
+    path: "/etc/profile"
+    backup: yes
+    insertafter: EOF
+    line: PATH=$PATH:/usr/local/node/bin
+    state: present
+  when: shell.stdout.find('zsh') != -1 and path.stdout.find('/usr/local/node/bin') != 0

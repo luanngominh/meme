@@ -9,8 +9,6 @@
     state: directory
     mode: '751'
     owner: "{{ item }}"
-    group: "{{ item }}"
-  with_items: "{{ WORKSPACE_USER }}"
 
 - name: Install dash-to-dock
   unarchive:

@@ -31,7 +31,7 @@ Work space for golang developer, devops, and frontend vue.
 - [x] alias some command
 - [x] golang
 - [x] docker and docker-compose
-- [x] nodejs
+- [x] nodejs v10
 - [x] vuejs and vue-cli
 - [x] telegram
 - [x] slack
