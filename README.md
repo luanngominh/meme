@@ -20,7 +20,6 @@ In `inventory/group_vars/all.yml`, copy_source_list' value is False, which mean 
 - [x] net-tools
 - [x] fonts-powerline
 - [x] sudo
-- [x] ssh
 
 Install basic utilities
 `ansible-playbook basic.yml --limit local`
@@ -40,7 +39,7 @@ Work space for golang developer, devops, and frontend vue.
 - [x] terraform
 - [x] tweak
 - [x] dash-to-dock (gnome extension)
-
+- [ ] reactjs
 Install workspace
 `ansible-playbook workspace.yml --limit local`
 ## Collaborator

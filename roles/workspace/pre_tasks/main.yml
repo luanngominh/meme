@@ -6,3 +6,7 @@
 - name: Architecture
   command: uname -m
   register: architech
+
+- name: Distribution Release
+  shell: lsb_release -a | grep "Debian"
+  register: distribution_release

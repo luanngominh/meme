@@ -1,0 +1,4 @@
+NODE_KEY: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
+NODE_REPO:
+  - deb https://deb.nodesource.com/node_0.10 {{ ansible_distribution_release.lower() }} main
+  - deb-src https://deb.nodesource.com/node_0.10 {{ ansible_distribution_release.lower() }} main

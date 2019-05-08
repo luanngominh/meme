@@ -1,32 +1,23 @@
 ---
 - name: Checking node repository has existed
-  command: test /etc/apt/sources.list.d/nodesource.list
+  command: test -f /etc/apt/sources.list.d/nodesource.list
   ignore_errors: true
   register: node
 
-- name: Get add node repository script
-  get_url: 
-    url: "{{ NODE_REPO }}"
-    dest: /tmp/node.sh
-    mode: 700
-  when: node.rc == 1
+- name: Add apt key for nodesource
+  apt_key:
+    url: " {{ NODE_KEY }} "
+  when: node.rc != 0
 
-- name: Add node repository
-  shell: /tmp/node.sh
-  when: node.rc == 1
-
-- name: Remove script
-  file:
-    path: /tmp/node.sh
-    state: absent
-  when: node.rc == 1
+- name: Add repository for node source
+  apt_repository:
+    repo: "{{ item }}"
+    filename: nodesource
+  when: node.rc != 0
+  with_items: "{{ NODE_REPO }}"
 
 - name: Install nodejs
-  apt:
+  apt :
     name: nodejs
+    update_cache: yes
     state: present
-
-# - name: Install npm
-#   apt:
-#     name: npm
-#     state: present
