@@ -38,6 +38,8 @@
     line: PATH=$PATH:/usr/local/node/bin
     state: present
   when: shell.stdout.find('zsh') != -1 and path.stdout.find('/usr/local/node/bin') == -1
+  environment:
+    PATH: $PATH:/usr/local/node/bin
 
 - name: Add node to bashrc
   lineinfile:
@@ -47,6 +49,26 @@
     line: PATH=$PATH:/usr/local/node/bin
     state: present
   when: shell.stdout.find('zsh') != -1 and path.stdout.find('/usr/local/node/bin') == -1
+  environment:
+    PATH: $PATH:/usr/local/node/bin
+
+- name: Add node to root bashrc
+  lineinfile:
+    path: /etc/bash.bashrc
+    backup: yes
+    insertafter: EOF
+    line: PATH=$PATH:/usr/local/node/bin
+    state: present
+  when: path.stdout.find('/usr/local/node/bin') == -1
+
+- name: Add node to root zsh profile
+  lineinfile:
+    path: /etc/environment
+    backup: yes
+    insertafter: EOF
+    line: PATH=$PATH:/usr/local/node/bin
+    state: present
+  when: path.stdout.find('/usr/local/node/bin') == -1
 
 - name: Get profile
   command: cat /etc/profile
@@ -60,3 +82,4 @@
     line: PATH=$PATH:/usr/local/node/bin
     state: present
   when: profile.stdout.find('/usr/local/node/bin') == -1
+
