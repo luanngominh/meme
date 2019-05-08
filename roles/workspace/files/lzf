@@ -31,3 +31,7 @@ function lph() {
 function gd() {
 	git diff
 }
+
+# XClip
+# Copy to clipboard 
+alias pbcopy="xclip -selection clipboard"

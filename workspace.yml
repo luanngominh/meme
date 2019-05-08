@@ -10,7 +10,7 @@
     - roles/workspace/vars/node.yml
   become: true
   roles:
-    - basic
+    - common
     - workspace
   post_tasks:
     - name: Reminding reboot after install tool for workspace

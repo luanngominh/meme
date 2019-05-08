@@ -21,6 +21,7 @@ In `inventory/group_vars/all.yml`, copy_source_list' value is False, which mean 
 - [x] fonts-powerline
 - [x] sudo
 
+* Change ansible user at inventory/workspace/workspace.yml
 Install basic utilities
 `ansible-playbook basic.yml --limit local`
 
