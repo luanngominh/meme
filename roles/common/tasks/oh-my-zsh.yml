@@ -1,0 +1,25 @@
+- name: Set zsh is default login shell
+  replace:
+    dest: /etc/passwd
+    regexp: /bin/bash$
+    replace: /usr/bin/zsh
+  
+- name: Clone oh-my-zsh
+  git:
+    clone: yes
+    repo: "{{ zsh_link }}"
+    dest: /etc/oh-my-zsh
+
+- name: Modify oh-my-zsh permissions
+  file:
+    dest: /etc/oh-my-zsh
+    mode: 0655
+    state: directory
+
+- name: Copy zsh profile
+  copy:
+    src: ../files/zprofile
+    dest: /etc/zsh/zprofile
+    mode: 0644
+    owner: root
+    group: root

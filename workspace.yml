@@ -3,14 +3,13 @@
   pre_tasks:
     - include: roles/workspace/pre_tasks/main.yml
   vars_files:
-    - roles/workspace/vars/basic.yml
     - roles/workspace/vars/docker.yml
     - roles/workspace/vars/google-chrome.yml
     - roles/workspace/vars/vscode.yml
     - roles/workspace/vars/node.yml
   become: true
   roles:
-    # - common
+    - common
     - workspace
   post_tasks:
     - name: Reminding reboot after install tool for workspace

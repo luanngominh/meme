@@ -1,16 +1,16 @@
 ---
-# - include: kubectl.yml
-# - include: gnome-extension.yml
-# - include: terraform.yml
-# - include: alias.yml
-# - include: chrome.yml
-# - include: compose.yml
-# - include: docker.yml
-# - include: golang.yml
+- include: kubectl.yml
+- include: gnome-extension.yml
+- include: terraform.yml
+- include: alias.yml
+- include: chrome.yml
+- include: compose.yml
+- include: docker.yml
+- include: golang.yml
 - include: node.yml
-# - include: slack.yml
-# - include: telegram.yml
-# - include: nfs-client.yml
-# - include: vscode.yml
-# - include: vue.yml
-# - include: wireshark.yml
+- include: slack.yml
+- include: telegram.yml
+- include: nfs-client.yml
+- include: vscode.yml
+- include: vue.yml
+- include: wireshark.yml

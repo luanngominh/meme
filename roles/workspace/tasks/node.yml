@@ -37,7 +37,7 @@
     insertafter: EOF
     line: PATH=$PATH:/usr/local/node/bin
     state: present
-  when: shell.stdout.find('zsh') != -1 and path.stdout.find('/usr/local/node/bin') != 0
+  when: shell.stdout.find('zsh') != -1 and path.stdout.find('/usr/local/node/bin') == -1
 
 - name: Add node to bashrc
   lineinfile:
@@ -46,7 +46,11 @@
     insertafter: EOF
     line: PATH=$PATH:/usr/local/node/bin
     state: present
-  when: shell.stdout.find('zsh') != -1 and path.stdout.find('/usr/local/node/bin') != 0
+  when: shell.stdout.find('zsh') != -1 and path.stdout.find('/usr/local/node/bin') == -1
+
+- name: Get profile
+  command: cat /etc/profile
+  register: profile
 
 - name: Add node to profile
   lineinfile:
@@ -55,4 +59,4 @@
     insertafter: EOF
     line: PATH=$PATH:/usr/local/node/bin
     state: present
-  when: shell.stdout.find('zsh') != -1 and path.stdout.find('/usr/local/node/bin') != 0
+  when: profile.stdout.find('/usr/local/node/bin') == -1

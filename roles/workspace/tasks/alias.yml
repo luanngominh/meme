@@ -9,6 +9,9 @@
     src: files/lzf
     dest: /etc/lzf
 
+- name: Get profile
+  command: cat /etc/profile
+  register: profile
 
 - name: Source alias file
   lineinfile:
@@ -17,3 +20,4 @@
     line: |
         source /etc/lzf
         source /etc/.meocon_profile
+  when: profile.stdout.find("source /etc/lzf\nsource /etc/.meocon_profile") == -1

@@ -5,16 +5,14 @@
 
 - name: Create dash-to-dock@micxgx.gmail.com folder
   file:
-    path: "/home/{{ item }}/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com"
+    path: "/home/{{ ansible_user }}/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com"
     state: directory
     mode: '751'
-    owner: "{{ item }}"
+    owner: "{{ ansible_user }}"
 
 - name: Install dash-to-dock
   unarchive:
     src: "{{ DASH_TO_DOCK }}"
-    dest: "/home/{{ item }}/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com"
+    dest: "/home/{{ ansible_user }}/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com"
     remote_src: true
-    owner: "{{ item }}"
-    group: "{{ item }}"
-  with_items: "{{ WORKSPACE_USER }}"
+    owner: "{{ ansible_user }}"
