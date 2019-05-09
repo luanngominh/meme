@@ -41,7 +41,8 @@ Work space for golang developer, devops, and frontend vue.
 - [x] tweak
 - [x] dash-to-dock (gnome extension)
 - [ ] reactjs
-Install workspace
+
+<br>Install workspace
 `ansible-playbook workspace.yml --limit local`
 ## Collaborator
 I am enable for all contribution, you can fork this project to your git and create pull request for me.
