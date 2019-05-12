@@ -23,7 +23,8 @@ In `inventory/group_vars/all.yml`, copy_source_list' value is False, which mean 
 
 * Change ansible user at inventory/workspace/workspace.yml
 Install basic utilities
-`ansible-playbook basic.yml --limit local`
+`ansible-playbook basic.yml`<br>
+If you run playbook from local, type `ansible-playbook -c local workspace.yml`
 
 * Note: oh-my-zsh only apply for root, so when creating new user we should copy .zshrc to current user directory. For example, `cp /etc/zsh/zprofile ~/.zshrc`
 ## My workspace
@@ -43,7 +44,8 @@ Work space for golang developer, devops, and frontend vue.
 - [ ] reactjs
 
 Install workspace
-`ansible-playbook workspace.yml --limit local`
+`ansible-playbook workspace.yml`<br>
+If you run playbook from local, type `ansible-playbook -c local workspace.yml`
 ## Collaborator
 I am enable for all contribution, you can fork this project to your git and create pull request for me.
 <br>Thank you,

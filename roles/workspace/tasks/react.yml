@@ -1,0 +1,11 @@
+- name: Install react
+  npm:
+    global: yes
+    name: react
+    state: present
+
+- name: Install create-react-app
+  npm:
+    global: yes
+    name: create-react-app
+    state: present

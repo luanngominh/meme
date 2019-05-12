@@ -22,64 +22,12 @@
   command: "mv /usr/local/{{ NODE_FILE.split('/')[-1].split('.tar.xz')[0] }} /usr/local/node"
   ignore_errors: yes
 
-- name: Check user's shell
-  command: echo $SHELL
-  register: shell
-
-- name: Get PATH
-  command: echo $PATH
-  register: path
-
-- name: Add node to zshrc
-  lineinfile:
-    path: "/home/{{ ansible_user }}/.zshrc"
-    backup: yes
-    insertafter: EOF
-    line: PATH=$PATH:/usr/local/node/bin
-    state: present
-  when: shell.stdout.find('zsh') != -1 and path.stdout.find('/usr/local/node/bin') == -1
-  environment:
-    PATH: $PATH:/usr/local/node/bin
-
-- name: Add node to bashrc
-  lineinfile:
-    path: "/home/{{ ansible_user }}/.bashrc"
-    backup: yes
-    insertafter: EOF
-    line: PATH=$PATH:/usr/local/node/bin
-    state: present
-  when: shell.stdout.find('zsh') != -1 and path.stdout.find('/usr/local/node/bin') == -1
-  environment:
-    PATH: $PATH:/usr/local/node/bin
-
-- name: Add node to root bashrc
-  lineinfile:
-    path: /etc/bash.bashrc
-    backup: yes
-    insertafter: EOF
-    line: PATH=$PATH:/usr/local/node/bin
-    state: present
-  when: path.stdout.find('/usr/local/node/bin') == -1
-
-- name: Add node to root zsh profile
-  lineinfile:
-    path: /etc/environment
-    backup: yes
-    insertafter: EOF
-    line: PATH=$PATH:/usr/local/node/bin
-    state: present
-  when: path.stdout.find('/usr/local/node/bin') == -1
-
-- name: Get profile
-  command: cat /etc/profile
-  register: profile
-
-- name: Add node to profile
-  lineinfile:
-    path: "/etc/profile"
-    backup: yes
-    insertafter: EOF
-    line: PATH=$PATH:/usr/local/node/bin
-    state: present
-  when: profile.stdout.find('/usr/local/node/bin') == -1
-
+- name: Create symbol link
+  file:
+    src: "/usr/local/node/bin/{{ item }}"
+    state: link
+    dest: "/usr/local/bin/{{ item }}"
+  with_items:
+  - npm
+  - node
+  - npx

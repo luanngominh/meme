@@ -2,3 +2,4 @@ rsa_key*
 *.retry
 monitoring.yml
 key*
+tmp

@@ -14,3 +14,4 @@
 - include: vscode.yml
 - include: vue.yml
 - include: wireshark.yml
+- include: react.yml
