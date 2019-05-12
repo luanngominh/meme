@@ -41,7 +41,7 @@ Work space for golang developer, devops, and frontend vue.
 - [x] terraform
 - [x] tweak
 - [x] dash-to-dock (gnome extension)
-- [ ] reactjs
+- [x] reactjs
 
 Install workspace
 `ansible-playbook workspace.yml`<br>
