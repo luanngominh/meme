@@ -5,10 +5,11 @@
 chmod +x get_ansible
 ./ansible
 ```
+* Note: meme only support debian or based on debian distro.
 ## Basic utilities
 
-Install common tool to debian or based on debian distro.
-In `inventory/group_vars/all.yml`, copy_source_list' value is False, which mean will use source list on your own. Change to True if you want to use project'source list.
+Install common tool for debian or based on debian distro such as ubuntu.
+In `inventory/group_vars/all.yml`, copy_source_list' value is False, which mean will use source list on your own. Change to True if you want to use project' source list.
 - [x] add sources list
 - [x] upgrade system 
 - [x] vim
