@@ -1,15 +1,15 @@
 ---
-- name: Checking terraform has not existed
-  stat:
+- name: Remove old version if any
+  file:
     path: "/usr/local/bin/tf"
-  register: tf
+    state: absent
+  ignore_errors: true
 
 - name: Install terraform
   unarchive:
     src: "{{ TERRAFORM_LINK }}"
     dest: "/usr/local/bin"
     remote_src: true
-  when: tf.stat.exists == False
 
 - name: Rename terraform to tf
   file:
@@ -17,7 +17,6 @@
     dest: "/usr/local/bin/tf"
     state: hard
     mode: 0755
-  when: tf.stat.exists == False
 
 - name: Remove old terraform
   file:

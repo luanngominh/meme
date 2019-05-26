@@ -4,5 +4,5 @@ GO_LINK: https://dl.google.com/go/go1.11.4.linux-amd64.tar.gz
 SLACK_LINK: https://downloads.slack-edge.com/linux_releases/slack-desktop-3.3.8-amd64.deb
 DOCKER_COMPOSE_URL: https://github.com/docker/compose/releases/download/1.23.1/docker-compose
 TELEGRAM_LINK: https://updates.tdesktop.com/tlinux/tsetup.1.5.15.tar.xz
-TERRAFORM_LINK: https://releases.hashicorp.com/terraform/0.11.13/terraform_0.11.13_{{ ansible_system.lower() }}_amd64.zip
+TERRAFORM_LINK: https://releases.hashicorp.com/terraform/0.12.0/terraform_0.12.0_{{ ansible_system.lower() }}_amd64.zip
 DASH_TO_DOCK: https://extensions.gnome.org/extension-data/dash-to-dockmicxgx.gmail.com.v65.shell-extension.zip
