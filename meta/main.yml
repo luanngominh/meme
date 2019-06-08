@@ -1,0 +1,19 @@
+galaxy_info:
+  author: Luan Ngo Minh (@luanngominh)
+  description: Playbook for installing some common tool for server and installing workspace for devops golang, frontend react and vue
+
+  issue_tracker_url: https://github.com/luanngominh/meme/issues
+  min_ansible_version: 2.7
+  platforms:
+  - name: Ubuntu
+    versions:
+    - all
+  - name: Debian
+    versions:
+    - 8
+    - 9
+    - 10
+  galaxy_tags:
+    - meme
+    - automation_workspace
+dependencies: []
