@@ -16,6 +16,12 @@ if [[ $? != 0 ]]; then
     apt-get install curl -y
 fi
 
+#Check and install python
+which python > /dev/null 2>&1
+if [[ $? != 0 ]]; then
+    apt-get install python -y
+fi
+
 #Check and install pip
 which pip > /dev/null 2>&1
 if [[ $? != 0 ]]; then 
