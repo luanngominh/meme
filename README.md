@@ -24,7 +24,7 @@ In `inventory/group_vars/all.yml`, copy_source_list' value is False, which mean 
 
 * Change ansible user at inventory/workspace/workspace.yml
 Install basic utilities
-`ansible-playbook basic.yml`<br>
+`ansible-playbook common.yml`<br>
 If you run playbook from local, type `ansible-playbook -c local workspace.yml`
 
 * Note: oh-my-zsh only apply for root, so when creating new user we should copy .zshrc to current user directory. For example, `cp /etc/zsh/zprofile ~/.zshrc`
