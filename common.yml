@@ -1,7 +1,5 @@
 ---
 - hosts: all
-  vars_files:
-    - roles/workspace/vars/basic.yml
   become: true
   roles:
-    - basic
+    - common
