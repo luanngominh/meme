@@ -7,11 +7,11 @@
     group: root
   when: copy_source_list == True
 
-# - name: Upgrade system
-#   apt:
-#     cache_valid_time: 86400
-#     update_cache: yes
-#     upgrade: full
+- name: Upgrade system
+  apt:
+    cache_valid_time: 86400
+    update_cache: yes
+    upgrade: full
 
 - name: Install utilities tools
   apt:
