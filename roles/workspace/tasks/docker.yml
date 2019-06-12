@@ -26,11 +26,3 @@
   apt:
     name: "docker-{{ docker_edition }}"
     state: present
-
-- name: Add desktop user to group docker
-  user:
-    name: "{{ item }}"
-    group: "docker"
-    append: true
-  with_items: "{{ docker_users }}"
-  ignore_errors: true

@@ -1,0 +1,4 @@
+- name: Emacs
+  apt:
+    name: emacs
+    state: present
