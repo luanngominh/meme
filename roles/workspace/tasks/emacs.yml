@@ -1,4 +1,5 @@
+# Install emacs, only terminal mode
 - name: Emacs
   apt:
-    name: emacs
+    name: emacs25-nox
     state: present
