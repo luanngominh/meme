@@ -1,0 +1,11 @@
+- name: Check speed has test installed
+  shell: test -f /usr/local/bin/speedtest
+  register: speedtest
+  ignore_errors: yes
+
+- name: Download speed test
+  get_url:
+    url: https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py
+    dest: /usr/local/bin/speedtest
+    mode: 0755
+  when: speedtest.rc != 0

@@ -31,5 +31,9 @@
     - nload
     - sysstat
     - xclip
+    - nload
+    - ioping
+    - sysstat
 
 - include: oh-my-zsh.yml
+- include: speedtest.yml

@@ -21,6 +21,10 @@ In `inventory/group_vars/all.yml`, copy_source_list' value is False, which mean 
 - [x] net-tools
 - [x] fonts-powerline
 - [x] sudo
+- [x] nload
+- [x] ioping
+- [x] sysstat
+- [x] speedtest
 
 * Change ansible user at inventory/workspace/workspace.yml
 Install basic utilities
