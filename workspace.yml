@@ -15,4 +15,4 @@
   post_tasks:
     - name: Reminding reboot after install tool for workspace
       debug:
-        msg: Pleases reboot your system before continuing to use
+        msg: Pleases reboot your system before continue using

@@ -17,3 +17,4 @@
 - include: react.yml
 - include: emacs.yml
 - include: cloud-cli.yml
+- include: insomnia.yml
