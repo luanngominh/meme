@@ -1,0 +1,15 @@
+- name: Add insomnia repository
+  apt_repository:
+    repo: "{{ INSOMINA_REPO }}"
+    state: present
+    filename: insomnia
+
+- name: Add insomnia key
+  apt_key:
+    url: "{{ INSOMINA_KEY }}"
+
+- name: Install insomnia
+  apt:
+    name: insomnia
+    update_cache: yes
+    state: present

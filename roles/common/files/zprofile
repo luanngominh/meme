@@ -9,6 +9,10 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# AWS  
+# export AWS_ACCESS_KEY_ID=BKIARGITEGOBCMJAFU7D
+# export AWS_SECRET_ACCESS_KEY=9jA5RrNCwL7k9lPJlK0RsZ9hAV3KRKf8dR/WRU1b
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -17,6 +21,13 @@ export ZSH="/etc/oh-my-zsh"
 
 # Vim is default editor
 export EDITOR="vim"
+
+alias pbcopy="xclip -sel clip"
+
+# Wheather
+alias wt="curl http://wttr.in/HoChiMinh,VN"
+
+stty stop ""
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,

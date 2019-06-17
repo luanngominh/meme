@@ -50,6 +50,7 @@ Work space for golang developer, devops, and frontend vue.
 - [x] emacs
 - [x] aws-cli
 - [x] gcloud-cli
+- [x] insomnia
 
 Install workspace
 `ansible-playbook workspace.yml`<br>

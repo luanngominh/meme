@@ -8,6 +8,7 @@
     - roles/workspace/vars/vscode.yml
     - roles/workspace/vars/node.yml
     - roles/workspace/vars/cloud-cli.yml
+    - roles/workspace/vars/insomnia.yml
   become: true
   roles:
     - common
@@ -15,4 +16,4 @@
   post_tasks:
     - name: Reminding reboot after install tool for workspace
       debug:
-        msg: Pleases reboot your system before continuing to use
+        msg: Pleases reboot your system before continue using

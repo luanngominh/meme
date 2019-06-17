@@ -6,7 +6,7 @@
   apt_repository:
     repo: "{{ GCLOUD_REPO }}"
     state: present
-    filename: google-cloud-sdk.list
+    filename: google-cloud-sdk
 
 - name: Add gcloud sdk repository public key
   apt_key:
