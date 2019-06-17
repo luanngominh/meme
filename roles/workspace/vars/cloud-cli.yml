@@ -1,0 +1,2 @@
+GCLOUD_REPO: deb https://packages.cloud.google.com/apt cloud-sdk main
+GCLOUD_PUBLIC_KEY: https://packages.cloud.google.com/apt/doc/apt-key.gpg

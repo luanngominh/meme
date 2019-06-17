@@ -7,6 +7,7 @@
     - roles/workspace/vars/google-chrome.yml
     - roles/workspace/vars/vscode.yml
     - roles/workspace/vars/node.yml
+    - roles/workspace/vars/cloud-cli.yml
   become: true
   roles:
     - common
