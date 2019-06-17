@@ -16,3 +16,4 @@
 - include: wireshark.yml
 - include: react.yml
 - include: emacs.yml
+- include: cloud-cli.yml

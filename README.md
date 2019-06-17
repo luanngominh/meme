@@ -48,6 +48,8 @@ Work space for golang developer, devops, and frontend vue.
 - [x] dash-to-dock (gnome extension)
 - [x] reactjs
 - [x] emacs
+- [x] aws-cli
+- [x] gcloud-cli
 
 Install workspace
 `ansible-playbook workspace.yml`<br>

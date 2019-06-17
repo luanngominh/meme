@@ -1,0 +1,26 @@
+- name: aws-cli
+  pip:
+    name: awscli
+
+- name: Add gcloud sdk repository
+  apt_repository:
+    repo: "{{ GCLOUD_REPO }}"
+    state: present
+    filename: google-cloud-sdk.list
+
+- name: Add gcloud sdk repository public key
+  apt_key:
+    url: "{{ GCLOUD_PUBLIC_KEY }}"
+
+- name: Install necessary package
+  apt: 
+    name: "{{ item }}"
+    state: present
+  with_items:
+  - apt-transport-https
+  - ca-certificates
+
+- name: Install gcloud
+  apt:
+    update_cache: yes
+    name: google-cloud-sdk
