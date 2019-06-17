@@ -1,2 +1,2 @@
-INSOMINA_REPO: deb https://dl.bintray.com/getinsomnia/Insomnia
+INSOMINA_REPO: deb https://dl.bintray.com/getinsomnia/Insomnia /
 INSOMINA_KEY: https://insomnia.rest/keys/debian-public.key.asc
