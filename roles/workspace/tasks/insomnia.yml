@@ -1,0 +1,15 @@
+- name: Add insomnia repository
+  apt_repository:
+    name: deb https://dl.bintray.com/getinsomnia/Insomnia
+    state: present
+    file: /etc/apt/sources.list.d/insomnia.list
+
+- name: Add insomnia key
+  apt_key:
+    url: https://insomnia.rest/keys/debian-public.key.asc
+
+- name: Install insomnia
+  apt:
+    name: insomnia
+    update_cache: yes
+    state: present
