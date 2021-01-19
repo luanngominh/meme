@@ -1,4 +1,6 @@
 # `meme` project
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fluanngominh%2Fmeme.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fluanngominh%2Fmeme?ref=badge_shield)
+
 * Set host information at inventory/hosts, it contains ansible_user, private_key and so on.
 * Install ansible: 
 ```shell
@@ -59,3 +61,7 @@ If you run playbook from local, type `ansible-playbook -c local workspace.yml`
 I am enable for all contribution, you can fork this project to your git and create pull request for me.
 <br>Thank you,
 <br>luanngominh
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fluanngominh%2Fmeme.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fluanngominh%2Fmeme?ref=badge_large)
